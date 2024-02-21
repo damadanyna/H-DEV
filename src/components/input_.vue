@@ -1,7 +1,7 @@
 <template> 
-    <div id="c_input_" class=" flex px-2 py-2 rounded-md   bg-white items-center justify-start border border-stone-400">  
-      <span @click="doIt()" :id="this.option.id"  class="duration-500 px-1 rounded-full absolute text-sm text-stone-300" v-text="this.option.label"></span>
-      <input id="self_input" v-model="values" @focusout="out_()" @focusin="in_()" type="text" class=" outline-none text-sm">
+    <div :id="'c_' + this.option.id_" class=" flex px-2 py-2 rounded-md   bg-white items-center justify-start border border-stone-400">  
+      <span @click="doIt()" :id="this.option.id_"  class="duration-500 px-1 rounded-full absolute text-sm text-stone-300" v-text="this.option.label"></span>
+      <input :id="'in_' + this.option.id_" v-model="values" @focusout="out_()" @focusin="in_()" :type="!this.option.type_?'text':this.option.type_" class=" outline-none text-sm">
     </div> 
 </template> 
     <script>  
@@ -19,8 +19,8 @@
         // atao ato aby ny fonction abiaby
         methods:{
           in_(){
-            var pl= document.getElementById(this.option.id);
-             var cI= document.getElementById('c_input_'); 
+            var pl= document.getElementById(this.option.id_);
+             var cI= document.getElementById('c_' + this.option.id_); 
               pl.style.marginTop='-40px';
               pl.style.color=' rgb(34,197,94)';
               pl.style.background='white';
@@ -30,9 +30,9 @@
               cI.style.border='solid 2px rgb(34,197,94)';   
           },
           out_(){
-            if (this.values=='' || null) {
-              var pl= document.getElementById(this.option.id);
-              var cI= document.getElementById('c_input_');  
+            if (this.values=='' || this.values==null) {
+              var pl= document.getElementById(this.option.id_);
+              var cI= document.getElementById('c_' + this.option.id_);  
               pl.style.marginTop='inherit';
               pl.style.color='rgb(214,211,209)';
               pl.style.background='transparent';
@@ -43,7 +43,7 @@
             }
           },
           doIt(){
-            var sI= document.getElementById('self_input') 
+            var sI= document.getElementById('in_' + this.option.id_) 
             sI.focus();
           }
           

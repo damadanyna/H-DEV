@@ -2,7 +2,7 @@
       <div class=" flex flex-col w-full h-full">
             <div class="flex flex-col">
                   <span>Login</span>
-                  <input_  :option="options"></input_>
+                  <input_ v-for="item, i in options" :key="i" :option="item" class="my-1"></input_> 
             </div>
       </div> 
     
@@ -17,10 +17,22 @@ export default {
       },
         data(){
             return{ 
-                options:{
-                  label: "Nom d'utilisateur", 
-                  id_:'nom_'
-                }
+                options:[
+                  {
+                        label: "Nom d'utilisateur", 
+                        id_:'nom_'
+                  },
+                  {
+                        label: "Mot de passe", 
+                        id_:'mdp_',
+                        type_:'password'
+                  },
+                  {
+                        label: "Nombre", 
+                        id_:'nbr_',
+                        type_:'number'
+                  }
+                ]
             }
         }
 }
