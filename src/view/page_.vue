@@ -24,17 +24,20 @@ export default {
                 options:[
                   {
                         label: "Nom d'utilisateur", 
-                        id_:'nom_'
+                        id_:'nom_',
+                        classIco:'fas fa-user'
                   },
                   {
                         label: "Mot de passe", 
                         id_:'mdp_',
-                        type_:'password'
+                        type_:'password',
+                        classIco:'fas fa-lock'
                   },
                   {
-                        label: "Nombre", 
+                        label: "Téléphone", 
                         id_:'nbr_',
-                        type_:'number'
+                        type_:'number',
+                        classIco:'fas fa-phone'
                   }
                 ],
                 options_:[

@@ -1,6 +1,6 @@
 <template> 
     <div class=" bg-stone-100  w-full flex justify-between px-5 py-2 ">
-      <div class=" font-bold" >Logo</div>
+      <i class="fas fa-eye"></i>
       <div class=" flex flex-row items-center">
         <input_ :option="options"></input_> 
 
@@ -24,7 +24,8 @@
                 list_menu:['Accueil','a propos','inscription','deconnexion'],
                 options:{
                   label:'Recherche',
-                  id_:'recheche_'
+                  id_:'recheche_',
+                  classIco:'fas fa-filter'
                 },
 
             }
