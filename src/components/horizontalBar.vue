@@ -7,7 +7,7 @@
         <div  v-for="item,i in list_menu" :key="i" class="mx-2">
             <span>{{ item }}</span>
         </div>
-        <div class=" w-7 h-7 bg-stone-400 rounded-full"></div>
+        <div class=" w-7 h-7 bg-stone-400 rounded-full" @click="logOut()"></div>
       </div>
     </div >
     
@@ -29,6 +29,13 @@
                 },
 
             }
+        },
+
+        methods:{
+          logOut(){
+            window.localStorage.setItem('*_*', JSON.stringify({isLg:false}))
+            this.$store.state.logged=false
+          }
         }
       }
       </script>

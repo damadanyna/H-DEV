@@ -1,16 +1,15 @@
 <template>  
       <div class=" flex flex-col w-full h-full">
-            
+      liste
       </div> 
     
 </template>
       
 <script> 
 
-
 export default { 
       components:{
-            
+           
       },
         data(){
             return{  
@@ -19,7 +18,15 @@ export default {
 
         methods:{
             doIt(){
-                   
+                  var txt= document.getElementById('txt_not_');
+                  txt.classList.add('animeIt');
+                  txt.textContent='Mot de passe incorrect'
+                  txt.style.color='rgb(255,12,12)'
+
+                  setTimeout(() => { 
+                        txt.classList.remove('animeIt');
+                  }, 500);
+            
             }
         },
 }
