@@ -1,16 +1,16 @@
 <template>  
-      <div class=" flex flex-col w-full h-full">
-            
+      <div class=" w-full h-full ">
+            <listeOfElement ></listeOfElement> 
       </div> 
     
 </template>
       
 <script> 
 
-
+import listeOfElement from '@/components/listeOfElement'
 export default { 
       components:{
-            
+            listeOfElement
       },
         data(){
             return{  
