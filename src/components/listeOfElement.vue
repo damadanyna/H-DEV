@@ -26,11 +26,11 @@
                   </div>
             </div>
       </div> 
-      <div v-else-if="listData.length !== 0 && this.$store.state.listOfSearch.length!=0  && this.$store.state.searchValue!=''" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-full">
-            <div v-for="item,i in listData" :key="i" class="m-3 px-3 py-2 transform hover:scale-110 duration-300">
+      <div v-else-if="listData.length !== 0 && this.$store.state.listOfSearch.length!=0  && this.$store.state.searchValue!=''" class=" h-72 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full ">
+            <div v-for="item,i in  this.$store.state.listOfSearch" :key="i" class="m-3 px-3 py-2 transform hover:scale-110 duration-300">
                  <img :src="setImg(item.img)" class=" h-48 object-cover rounded-md" alt="">
                   <div class="mt-3 flex flex-col">
-                        <span> {{item.desc}} </span>
+                        <div v-html="item.desc"> </div>
                        <div class="flex justify-between">
                         <span class=" bg-green-500 rounded-lg px-2 text-white"> Voir +</span>
                         <span class=" text-end"> {{item.h_}} </span>
@@ -41,6 +41,7 @@
       <div v-else-if="listData.length !== 0 && this.$store.state.listOfSearch.length==0  && this.$store.state.searchValue!=''" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-full">
             le page est vide
       </div>  
+
     
 </template>
       

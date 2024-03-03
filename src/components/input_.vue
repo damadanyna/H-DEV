@@ -30,7 +30,7 @@
               pl.style.font='900';
               pl.style.fontSize='10px'; 
 
-              cI.style.border='solid 2px rgb(34,197,94)';   
+              cI.style.border='solid 1px rgb(34,197,94)';   
           },
           out_(){
             if (this.option__.model_=='' || this.option__.model_==null) {

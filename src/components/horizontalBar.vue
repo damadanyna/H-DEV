@@ -5,12 +5,14 @@
         Oay
       </div>
       <div class=" flex flex-row items-center">
-        <input_ @keydown="findIt()" :option="options"></input_> 
+        <input_ @keyup="findIt()" :option="options"></input_> 
 
         <div  v-for="item,i in list_menu" :key="i" class="mx-2">
-            <span>{{ item }}</span>
+            <i :class="item"></i>
         </div>
-        <div class=" w-7 h-7 bg-stone-400 rounded-full" @click="logOut()"></div>
+        <div class="  bg-stone-400 rounded-full" @click="logOut()"> 
+          <i class="fas fa-user px-1"></i>
+        </div>
       </div>
     </div >
     
@@ -24,7 +26,7 @@
         },
         data(){
             return{
-                list_menu:['Accueil','a propos','inscription','deconnexion'],
+                list_menu:['fas fa-house','fas fa-question'],
                 options:{
                   label:'Recherche',
                   id_:'recheche_',
@@ -58,14 +60,22 @@
             for (let i = 0; i < tab.length; i++) {
               const element = tab[i];
               
-              if (element.desc.includes(this.options.model_)==true) {
-                  this.$store.state.listOfSearch.push(element)
-                  // console.log( this.$store.state.listOfSearch); 
+              var input = element.desc.toLowerCase()
+              var rechercher = this.options.model_ .toLowerCase()
+              if (input.includes(rechercher)==true) {
+                var k= input.replace(rechercher,`<span class=" rounded-md px-1 bg-yellow-400 text-white">${this.options.model_.toLowerCase()}</span>`)
+                var obj={
+                  desc: k,
+                  h_:element.h_,
+                  img:element.img 
+                }  
+                  this.$store.state.listOfSearch.push(obj) 
               }
             }
-
-            
-            console.log( this.$store.state.listOfSearch); 
+            if (this.options.model_=='') { 
+              this.$store.state.listOfSearch=[]
+            }
+ 
             
           }
         }
