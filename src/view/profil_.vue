@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full">
-      setting
-  </div>
+<div class="w-full">
+    Profil
+</div>
 </template>
 
 <script>
