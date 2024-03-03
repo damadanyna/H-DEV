@@ -4,4 +4,19 @@
 
 body{
     overflow: hidden;
+    animation-duration: .5s;
 }
+
+/* Ajout style dans la bare de navigation si , l'une d'entre elle soit active */
+
+nav a.router-link-exact-active {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  nav a.router-link-exact-active path {
+    fill: #ffffff;
+  }
+  nav .router-link-exact-active {
+    transform: translateX(25px);
+  }
+
