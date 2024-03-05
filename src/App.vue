@@ -3,6 +3,7 @@
     <notify_ id="note_" class=""></notify_>
     <popRecherche_ v-if="this.$store.state.hidePopup==false"></popRecherche_>
     <popupDec v-if="this.$store.state.hidePopupUser==false"></popupDec>
+    <popView_ v-if="this.$store.state.hideView==false"></popView_>
     <div v-if="this.$store.state.logged == true" class=" w-full h-full">
         <div></div>
         <horizontal_bar :class="this.$store.state.theme[this.$store.state.indeOfTheme].bg_h_nav"></horizontal_bar>
@@ -25,6 +26,7 @@ import horizontal_bar from './components/horizontalBar.vue'
 import navBar from './components/navBar.vue'
 import login_Vue from './view/auth/login_.vue'
 import notify_ from '@/components/notify_'
+import popView_ from './components/popView_.vue'
 
 export default {
     name: 'App',
@@ -33,11 +35,14 @@ export default {
         return {}
     },
 
-    components: {popRecherche_,
+    components: {
+        popRecherche_,
         horizontal_bar,
         navBar,
         login_Vue,
-        notify_,popupDec
+        notify_,
+        popupDec,
+        popView_
     },
     mounted() {
         document.getElementById('c_load').style.display = 'none'

@@ -12,7 +12,7 @@
         </div>
         <div class=" mb-3 overflow-y-auto max-h-[40vh] overflow-x-hidden" id="container_search">
             <div v-if="listData.length !== 0 && this.$store.state.listOfSearch.length!=0  && this.$store.state.searchValue!=''" :class="this.$store.state.theme[this.$store.state.indeOfTheme].text" class="  flex flex-col w-full ">
-                <div v-for="item,i in  this.$store.state.listOfSearch" :key="i" class="  border-b border-green-700 m-3 px-3 items-center flex flex-row py-2 transform hover:scale-110 duration-300 justify-between">
+                <div @click="getIt(item)" v-for="item,i in  this.$store.state.listOfSearch" :key="i" class="  border-b border-green-700 m-3 px-3 items-center flex flex-row py-2 transform hover:scale-110 duration-300 justify-between">
                     <div class="flex flex-row">
                         <img :src="setImg(item.img)" class=" h-8 object-cover rounded-md" alt="">
                         <div class=" ml-4" v-html="item.desc"> </div>
@@ -54,6 +54,10 @@ export default {
     },
     methods: {
 
+        getIt(item){
+                  this.$store.state.hideView = false;
+                  this.$store.state.selectedItem=item ;
+            },
         setImg(img) {
             return require('../assets/produits/' + img)
         },

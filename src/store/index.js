@@ -5,6 +5,8 @@ export default createStore({
     logged: false,
     hidePopup:true,
     hidePopupUser:true,
+    hideView:false,
+    selectedItem:{},
     optNote: {
       type: 1, //1 vert, 2 bleu, 3 rouge
       label: null,

@@ -1,5 +1,5 @@
 <template>  
-      <div v-if="listData.length == 0" :class="this.$store.state.theme[this.$store.state.indeOfTheme].text" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-full">
+      <div v-if="listData.length == 0" :class="this.$store.state.theme[this.$store.state.indeOfTheme].text" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-[97vh] overflow-y-auto">
             <div id="bloc_" v-for="item,i in 10" :key="i" class="m-3">
                  <div class=" h-48 rounded-md bg-stone-400"> </div>
 
@@ -14,8 +14,8 @@
       </div> 
       
 
-      <div  v-if="listData.length !== 0" :class="this.$store.state.theme[this.$store.state.indeOfTheme].text" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-full">
-            <div v-for="item,i in listData" :key="i" class=" m-3 px-3 py-2 transform hover:scale-110 duration-300">
+      <div  v-if="listData.length !== 0" :class="this.$store.state.theme[this.$store.state.indeOfTheme].text" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full  h-[97vh] overflow-y-auto">
+            <div @click="getIt(item)" v-for="item,i in listData" :key="i" class=" m-3 px-3 py-2 transform hover:scale-110 duration-300">
                  <img :src="setImg(item.img)" class=" h-48 object-cover rounded-md" alt="">
                   <div class="mt-3 flex flex-col">
                         <span> {{item.desc}} </span>
@@ -56,7 +56,10 @@ export default {
                   }, 500);
             
             },
-
+            getIt(item){
+                  this.$store.state.hideView = false;
+                  this.$store.state.selectedItem=item ;
+            },
             setImg(img){
                   return require('../assets/produits/' + img)
             }
