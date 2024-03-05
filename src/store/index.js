@@ -3,21 +3,28 @@ export default createStore({
   state: {
     //variable global
     logged: false,
+    hidePopup:true,
+    hidePopupUser:true,
     optNote: {
       type: 1, //1 vert, 2 bleu, 3 rouge
       label: null,
     },
     indeOfTheme: 1,
+    // theme[ide].bg
     theme: [
       // quand le theme n'est pas dark
+      // si indeOfTheme==0
       {
         bg: " bg-white",
         text: " ",
+        bg_h_nav:'bg_h_nav_white'
       },
       // quand le theme est dark
+      // si indeOfTheme==1
       {
-        bg: "bg-stone-900",
-        text: "text-stone-100",
+        bg: " bg-dark",
+        text: "text-dark1",
+        bg_h_nav:'bg_h_nav'
       },
     ],
     generalData: [

@@ -2,28 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    overflow: hidden;
-    animation-duration: .5s;
+body {
+  overflow: hidden;
+  animation-duration: 0.5s;
 }
 
-*{
-  transition: .3s;
+* {
+  transition: 0.3s;
 }
-/* Ajout style dans la bare de navigation si , l'une d'entre elle soit active */
 
 a.router-link-exact-active {
-    color: #00c93c;  
-    border-left: 2px solid #00c93c;
-    background-color: rgb(237, 253, 237);
-    animation: animeit 500 forwards;
-  }  
- 
-a.router-link-exact-active {
-  transform: rotateZ('90deg');
-  }  
- 
-  
+  color: #00c93c;
+  border-left:4px solid #00c93c;
+  background: #00ad1d31;
+  border-radius: 0px 10px 10px 0px;
+  transform: scale(1.1);
+}
+.bg-green-trsp{
+  background: #00ad1d31;
+}
+a{ 
+  border-left:4px solid #00c93c00;
+}
+a:hover{  
+  transform: scale(1.05);
+}
+.bg-dark {
+  background: rgb(26, 25, 25);
+}
+.text-dark1 {
+  color: rgb(255, 255, 255);
+}
+.bg_h_nav_white {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.108);
+}
+::-webkit-scrollbar{
+  width: 7px;
+}
+::-webkit-scrollbar:hover{
+  width: 10px;
+}
 
+::-webkit-scrollbar-track{
+  background: #00ad1d31;
+}  
 
- 
+::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: slategray;
+}
+::-webkit-scrollbar-thumb:hover{ 
+  cursor: pointer;
+  background: rgb(133, 133, 133);
+}

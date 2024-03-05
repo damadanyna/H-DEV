@@ -1,35 +1,35 @@
 <template>
- <div class=" bg-stone-100  w-full flex justify-between px-5 py-2  ">
-     <div class="" @click="showNote()">
-         <i class="fas fa-eye"></i>
-         Oay
-     </div>
-     <div class=" flex flex-row items-center">
-         <input_ @keyup="findIt()" :option="options"></input_>
-
-         <div v-for="item,i in list_menu" :key="i" class="mx-2">
-             <i :class="item"></i>
-         </div>
-         <div class="  bg-stone-400 rounded-full" @click="logOut()">
-             <i class="fas fa-user px-1"></i>
-         </div>
-         <div class=" px-4" @click="setTheme() ">
-             <i class="fas fa-moon"></i>
-         </div>
-     </div>
- </div>
+<div :class="this.$store.state.theme[this.$store.state.indeOfTheme].bg_h_nav +' '+this.$store.state.theme[this.$store.state.indeOfTheme].text" class="  w-full flex justify-between px-5 py-2  ">
+    <div class="" @click="showNote()">
+        <i class="fas fa-eye"></i>
+        Oay
+    </div>
+    <div class=" flex flex-row items-center">
+        <div @click="this.$store.state.hidePopup=false" class=" hover:scale-125 transform cursor-pointer">
+            <i class=" text-lg mr-4  fab fa-searchengin"></i>
+        </div>
+        <div>
+           
+        </div>
+        <div title=" thème" :class="this.$store.state.indeOfTheme !== 0?' rotate-180':'rotate-0 '" class=" right-3 absolute px-4 text-lg w-9 ml-2 flex justify-center items-center   rounded-2xl" @click="setTheme() ">
+            <div class=" h-6 w-6 rounded-xl  z-20 text-sm   items-center flex ">
+                <i :class="this.$store.state.indeOfTheme !== 0?' text-[.60rem] text-stone-200 ':' text-xl  text-black'" class=" -ml-1 fas fa-moon mx-1"></i>
+                <i :class="this.$store.state.indeOfTheme == 0?' text-[.60rem] ':' text-xl'" class=" ml-2  fas fa-sun text-yellow-400"></i>
+            </div>
+        </div>
+        <div class="  bg-stone-400 rounded-full" @click="afficheSetting()">
+            <i class="fas fa-user px-1"></i>
+        </div>
+        <div class=" mx-6"></div>
+    </div>
+</div>
 </template>
 
-      
 <script>
- import input_ from './input_.vue'
  export default {
-     components: {
-         input_
-     },
+     components: {},
      data() {
          return {
-             list_menu: ['fas fa-house', 'fas fa-question'],
              options: {
                  label: 'Recherche',
                  id_: 'recheche_',
@@ -41,12 +41,6 @@
      },
 
      methods: {
-         logOut() {
-             window.localStorage.setItem('*_*', JSON.stringify({
-                 isLg: false
-             }))
-             this.$store.state.logged = false
-         },
 
          showNote() {
              this.$store.commit('showNotif');
@@ -84,12 +78,16 @@
          },
 
          setTheme() {
-            //  this.$store.state.indeOfTheme = 0
-             console.log(this.$store.state.indeOfTheme);
+             this.$store.state.indeOfTheme == 0 ? this.$store.state.indeOfTheme = 1 : this.$store.state.indeOfTheme = 0
+
+         },
+
+         afficheSetting(){
+            this.$store.state.hidePopupUser = false
          }
      }
  }
 </script>
-      
+
 <style> 
       </style>
