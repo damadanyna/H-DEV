@@ -3,7 +3,7 @@
 <div :id="'c_' + this.option__.id_" :class="this.$store.state.indeOfTheme == 0?'bg-white':'bg-dark'" class=" flex px-2 py-2 rounded-md    items-center justify-start border border-stone-400" :style="'width:' +this.option__.width">
     <span @click="doIt()"  :class="this.$store.state.indeOfTheme == 0?'bg-white':'bg-dark'" :id="this.option__.id_" class=" ml-6 duration-500 px-1 rounded-full absolute text-sm text-stone-300" v-text="this.option__.label"></span>
     <i  :id="'id_'+this.option__.id_ " :class="this.$store.state.indeOfTheme == 0?'bg-white ' + this.option__.classIco:'bg-dark '+ this.option__.classIco"  class=" duration-300  text-stone-400"></i>
-    <input :id="'in_' + this.option__.id_"  :class="this.$store.state.indeOfTheme == 0?'text-black':'text-white'" v-model="this.option__.model_" @focusout="out_()" @focusin="in_()" :type="!this.option__.type_?'text':this.option__.type_" class=" bg-transparent pl-1 outline-none w-full text-sm" :style="'font-size:' +this.option__.size">
+    <input   :id="'in_' + this.option__.id_"  :class="this.$store.state.indeOfTheme == 0?'text-black':'text-white'" v-model="this.option__.model_" @focusout="out_()" @focusin="in_()" :type="!this.option__.type_?'text':this.option__.type_" class=" bg-transparent pl-1 outline-none w-full text-sm" :style="'font-size:' +this.option__.size">
 </div> 
 </template>
 
