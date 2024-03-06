@@ -1,7 +1,9 @@
 <template>
 <div class=" flex w-full h-full duration-1000" :class="this.$store.state.theme[this.$store.state.indeOfTheme].bg">
-    <notify_ id="note_" class=""></notify_>
-    <popRecherche_ v-if="this.$store.state.hidePopup==false"></popRecherche_>
+  <input type="file">
+  <button class=" bg-green-500">upload</button>
+    <!-- <notify_ id="note_" class=""></notify_>
+    <pointupRecherche_ v-if="this.$store.state.hidePopup==false"></popRecherche_>
     <popupDec v-if="this.$store.state.hidePopupUser==false"></popupDec>
     <div v-if="this.$store.state.logged == true" class=" w-full h-full">
         <div></div>
@@ -10,21 +12,21 @@
             <navBar></navBar>
             <router-view></router-view>
         </div>
-    </div>
+    </div> -->
 
-    <login_Vue class="w-full " v-else></login_Vue>
+    <!-- <login_Vue class="w-full " v-else></login_Vue> -->
 </div>
 <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import popRecherche_ from './components/popRecherche_.vue'
-import popupDec from './components/poputDecnx.vue'
-import horizontal_bar from './components/horizontalBar.vue'
-import navBar from './components/navBar.vue'
-import login_Vue from './view/auth/login_.vue'
-import notify_ from '@/components/notify_'
+// import popRecherche_ from './components/popRecherche_.vue'
+// import popupDec from './components/poputDecnx.vue'
+// import horizontal_bar from './components/horizontalBar.vue'
+// import navBar from './components/navBar.vue'
+// import login_Vue from './view/auth/login_.vue'
+// import notify_ from '@/components/notify_'
 
 export default {
     name: 'App',
@@ -33,11 +35,12 @@ export default {
         return {}
     },
 
-    components: {popRecherche_,
-        horizontal_bar,
-        navBar,
-        login_Vue,
-        notify_,popupDec
+    components: {
+        // popRecherche_,
+        // horizontal_bar,
+        // navBar,
+        // login_Vue,
+        // notify_,popupDec
     },
     mounted() {
         document.getElementById('c_load').style.display = 'none'
