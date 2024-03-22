@@ -1,27 +1,32 @@
 <template>
-<div class=" flex w-full h-full"> 
+<div class=" overflow-auto overflow-x-hidden w-full h-full">
     <accueilView></accueilView>
+    <horizontalBarVue></horizontalBarVue>
+    <accueilView></accueilView>
+
 </div>
 </template>
 
 <script>
- import accueilView from './view/accueilView.vue';
-  export default {
-      name: 'App',
+import horizontalBarVue from './components/horizontalBar.vue'
+import accueilView from './view/accueilView.vue';
+export default {
+    name: 'App',
 
-      data() {
-          return {}
-      },
+    data() {
+        return {}
+    },
 
-      components: {
-        accueilView
-      },
-      mounted() {
+    components: {
+        accueilView,
+        horizontalBarVue
+    },
+    mounted() {
 
-      },
-      updated() {}
+    },
+    updated() {}
 
-  }
+}
 </script>
 
 <style>
