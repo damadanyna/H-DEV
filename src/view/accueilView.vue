@@ -1,5 +1,5 @@
 <template>
-<div class=" w-full h-full relative flex justify-center object-cover bg-center " v-bind:style="`background-image:url(${setImg('hero-bg.png')})`">
+<div class="  w-full h-full relative flex justify-center object-cover bg-center " v-bind:style="`background-image:url(${setImg('hero-bg.png')})`">
     <div class="flex absolute w-full justify-between items-center px-7 py-5">
         <div class="flex items-center">
             <img class=" w-[2.80rem]" src="../assets/img/logo.png" alt="">

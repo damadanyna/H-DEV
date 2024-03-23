@@ -55,3 +55,74 @@ a:hover{
   cursor: pointer;
   background: rgb(133, 133, 133);
 }
+
+
+/* Style de circle */
+.skill-container .skill {
+  position: relative; 
+}
+
+.skill-container .skill .outer {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 20px; 
+}
+
+.skill-container .skill .outer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;  
+}
+
+.skill-container .skill .outer .inner .number {
+  font-weight: 800; 
+}
+
+
+.skill-container .skill:nth-child(1) .outer .inner .number {
+  color: #ffffff;
+}
+
+.skill-container .skill:nth-child(2) .outer .inner .number {
+  color: #ffffff;
+}
+
+.skill-container .skill:nth-child(3) .outer .inner .number {
+  color: #ffffff
+}
+.skill-container .skill:nth-child(4) .outer .inner .number {
+  color: #ffffff
+}
+
+circle {
+  fill: none;
+  stroke-width: 6px;
+  stroke-dasharray: 445;
+  stroke-dashoffset: 445;
+  transition: 2s linear;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skill-container .skill:nth-child(1) circle {
+  stroke: #ffffff;
+}
+
+.skill-container .skill:nth-child(2) circle {
+  stroke: #ffffff;
+}
+
+.skill-container .skill:nth-child(3) circle {
+  stroke: #ffffff;
+}
+.skill-container .skill:nth-child(4) circle {
+  stroke: #ffffff;
+}
