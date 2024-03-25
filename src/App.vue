@@ -4,6 +4,7 @@
     <horizontalBarVue></horizontalBarVue>
     <aboutVue></aboutVue>
     <portfolioView></portfolioView>
+    <ourPortFolioView></ourPortFolioView>
 </div>
 </template>
 
@@ -12,6 +13,7 @@ import accueilView from './view/accueilView.vue';
 import horizontalBarVue from './components/horizontalBar.vue'
 import aboutVue from './view/aboutView.vue';
 import portfolioView from './view/portfolioView.vue';
+import ourPortFolioView from './view/ourPortFolioView.vue'
 export default {
     name: 'App',
 
@@ -23,7 +25,8 @@ export default {
         accueilView,
         horizontalBarVue,
         aboutVue,
-        portfolioView
+        portfolioView,
+        ourPortFolioView
     },
     mounted() {
 
