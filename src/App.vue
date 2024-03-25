@@ -5,15 +5,17 @@
     <aboutVue></aboutVue>
     <portfolioView></portfolioView>
     <ourPortFolioView></ourPortFolioView>
+    <testMonialViewVue></testMonialViewVue>
 </div>
 </template>
 
 <script>
 import accueilView from './view/accueilView.vue';
-import horizontalBarVue from './components/horizontalBar.vue'
+import horizontalBarVue from './components/horizontalBar.vue';
 import aboutVue from './view/aboutView.vue';
 import portfolioView from './view/portfolioView.vue';
-import ourPortFolioView from './view/ourPortFolioView.vue'
+import ourPortFolioView from './view/ourPortFolioView.vue';
+import testMonialViewVue from './view/testMonialView.vue'
 export default {
     name: 'App',
 
@@ -26,7 +28,8 @@ export default {
         horizontalBarVue,
         aboutVue,
         portfolioView,
-        ourPortFolioView
+        ourPortFolioView,
+        testMonialViewVue
     },
     mounted() {
 

@@ -12,7 +12,7 @@
     </div>
     <div class="flex flex-row items-center ">
         <div class=" flex flex-col absolute ml-7 mt-[6rem]">
-            <button class=" bg-[#0CAA7D]  flex justify-center  w-12 py-3 ml-5 rounded-md items-center flex">
+            <button class=" bg-[#0CAA7D]  flex justify-center  w-12 py-3 ml-5 rounded-md items-center">
                 <i class="fas fa-chevron-right text-xl "></i>
             </button>
             <button class=" bg-[#0CAA7D] w-12 flex justify-center py-3 mt-3 rounded-md items-center">
