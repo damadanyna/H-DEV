@@ -1,5 +1,5 @@
 <template>
-<div class=" h-[100vh] mt-[11rem] items-center">
+<div class="h-full items-center">
     <div class="px-[6.9rem] w-full justify-center flex ">
         <div class=" text-[2rem]  font-semibold flex items-center">
             <div class="relative">

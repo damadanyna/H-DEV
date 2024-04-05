@@ -1,5 +1,5 @@
 <template>
-<div class=" h-[110vh] w-full flex mt-20  ">
+<div class=" w-full flex  ">
     <div class=" flex w-[60vw] justify-end">
         <img class=" w-[40rem] h-[38rem]" src="../assets/img/about-img.png" alt="">
     </div>

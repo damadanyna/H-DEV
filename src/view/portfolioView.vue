@@ -1,5 +1,5 @@
 <template>
-<div class=" h-[120vh]">
+<div class="h-full">
     <div id="profolioConent" class="flex flex-col px-[6.9rem] w-full">
         <div class=" text-3xl  font-semibold flex items-center">
             <div class="relative">
