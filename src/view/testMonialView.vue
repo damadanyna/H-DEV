@@ -17,7 +17,7 @@
         </div>
         <div class=" flex w-full justify-between px-10 mt-12">
             <div class="flex flex-col">
-                <div class=" bg-stone-100 rounded-xl p-5 w-[38vw]">
+                <div class=" bg-stone-100 rounded-3xl p-5 w-[38vw]">
                     <div class="flex flex-row items-center">
                         <img src="../assets/img/client-1.jpg" class=" rounded-xl" alt="">
                         <div class=" flex flex-col ml-6">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="flex flex-col mt-28">
-                <div class=" bg-stone-100 rounded-xl p-5 w-[38vw]">
+                <div class=" bg-stone-100 rounded-3xl p-5 w-[38vw]">
                     <div class="flex flex-row items-center">
                         <img src="../assets/img/client-1.jpg" class=" rounded-xl" alt="">
                         <div class=" flex flex-col ml-6">

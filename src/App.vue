@@ -6,7 +6,7 @@
     <portfolioView class="h-[120vh]"></portfolioView>
     <ourPortFolioView class=" mt-52 "></ourPortFolioView>
     <testMonialViewVue class=" h-[100vh]  mt-[11rem] "></testMonialViewVue>
-    <contactView class=" h-[100vh]"></contactView>
+    <contactView class=" h-[92%] mt-[30vh]"></contactView>
 </div>
 </template>
 
