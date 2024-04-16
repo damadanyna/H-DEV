@@ -1,7 +1,7 @@
 <template>
 <div class=" bg-[#0caa7d] w-full sticky top-0 md:px-[5.9rem] py-[.55rem] z-50 items-center flex justify-between">
     <div class=" flex  ">
-        <span @click="scrollToElt(item.url  )" :class="i!=0?'md:ml-[3.7rem]':''" class="ml-3 text-white " v-for="item,i in menuList" :key="i" v-text="item.label"></span>
+        <span @click="scrollToElt(item.url  )" :class="i!=0?'md:ml-[3.7rem]':''" class="ml-3 text-white cursor-pointer " v-for="item,i in menuList" :key="i" v-text="item.label"></span>
    
     </div>
     <!-- <div class="flex items-center text-white">
@@ -46,7 +46,7 @@ export default {
             console.log(i);
             const el= document.getElementById(i) 
             const top= el.offsetTop; 
-            document.getElementById('container').scrollTo(
+           window.scrollTo(
                 {
                     top:top,
                     behavior:'smooth'

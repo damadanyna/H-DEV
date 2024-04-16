@@ -1,14 +1,14 @@
 <template>
-<div id="container" class=" overflow-auto overflow-x-hidden w-full h-full">
-    <accueilView class=" w-full  "></accueilView>
-    <horizontalBarVue></horizontalBarVue>
+<!-- <div id="container" class=" overflow-auto overflow-x-hidden w-full h-full"> -->
+    <accueilView id="header_page"  class=" w-full overflow-hidden  "></accueilView>
     <!-- <aboutVue class="h-[110vh] mt-20  "></aboutVue> -->
-    <ourPortFolioView id="accueil" class=" "></ourPortFolioView>
-    <portfolioView id="service" class=""></portfolioView>
+    <horizontalBarVue id="nav_bars_h"></horizontalBarVue>
+    <ourPortFolioView id="accueil" class=" overflow-hidden relative "></ourPortFolioView>
+    <portfolioView id="service" class=" overflow-hidden"></portfolioView>
     <!-- <testMonialViewVue class=" h-[100vh]  mt-[11rem] "></testMonialViewVue> -->
-    <contactView id="contact" class=""></contactView>
-    <menuView class="bg-[#201F33]"></menuView>
-</div>
+    <contactView id="contact" class=" overflow-hidden"></contactView>
+    <menuView class="bg-[#201F33]  overflow-hidden"></menuView>
+<!-- </div> -->
 </template>
 
 <script>
@@ -37,7 +37,18 @@ export default {
         contactView,
         menuView
     },
-    mounted() {
+    mounted() { 
+        window.addEventListener('scroll',()=>{
+            var elt_ =document.getElementById('nav_bars_h')
+            if (window.scrollY>=window.innerHeight) { 
+                elt_.style.position='fixed';
+                elt_.style.top='0'
+            }
+            else if (window.scrollY<window.innerHeight) { 
+                elt_.style.position='unset';
+                elt_.style.top='0'
+            } 
+        })
 
     },
     updated() {}

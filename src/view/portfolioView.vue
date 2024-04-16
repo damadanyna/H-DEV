@@ -1,5 +1,5 @@
 <template>
-<div class=" lg:h-full py-9 px-3 flex flex-col">
+<div class="   py-9 px-3 flex flex-col">
     <div id="profolioConent" class="flex flex-col lg:px-[1.9rem] w-full">
         <div class=" text-3xl  font-semibold flex items-center">
             <div class="relative">
@@ -9,23 +9,23 @@
             <div class=" lg:w-[.67rem] lg:h-[.67rem] bg-[#fb1004] rounded-md ml-2"></div>
         </div>
         <div class="grid lg:grid-cols-4  md:grid-cols-2 sm:grid-cols-2 grid-cols-1  mt-7 text-white  ">
-            <div class="flex flex-col  bg-[#fb1004]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
+            <div id="cart_1" class="flex flex-col  bg-[#fb1004]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
                 <img class=" w-16" src="../assets/img/idea.png" alt="">
                 <span class=" mt-2 font-bold">DÉVELOPPEMENT</span>
                 <span class=" text-center mt-2">Un back-end solide et un front-end puissant : nos ingénieurs logiciels relèvent le défi de A à Z. Partagez avec audace vos projets les plus délicats en toute confiance et voyez-les se concrétiser.</span>
             </div>
-            <div class="flex flex-col  bg-[#0caa7d]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
+            <div id="cart_2" class="flex flex-col  bg-[#0caa7d]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
                 <!-- <img class=" w-16" src="../assets/img/controller.png" alt=""> -->
                 <i class="fas fa-brain text-5xl"></i>
                 <span class=" mt-2 font-bold">MAÎTRISE DE L'IA</span>
                 <span class=" text-center mt-2">Travaillez avec nos experts en IA éprouvés pour trouver des solutions rapides et efficaces pour votre entreprise, augmentant ainsi la productivité et modélisant avec succès même les problèmes les plus complexes. Et voilà, un pas de plus vers votre rêve : atteindre le statut de milliardaire et au-delà.</span>
             </div>
-            <div class="flex flex-col  bg-[#fb1004]   py-7 mx-2 my-2 rounded-2xl items-center px-3">
+            <div id="cart_3" class="flex flex-col  bg-[#fb1004]   py-7 mx-2 my-2 rounded-2xl items-center px-3">
                 <img class=" w-16" src="../assets/img/monitor.png" alt="">
                 <span class=" mt-2 font-bold">CONCEPTION UI/UX</span>
                 <span class=" text-center mt-2">Avec notre équipe UI/UX, fini les sites web obsolètes ! Non seulement nous vous gardons en avance sur les tendances, mais nous donnons également un coup de pouce à votre entreprise, en augmentant les prospects et bien plus encore. Essayez-le et regardez la magie opérer !</span>
             </div>
-            <div class="flex flex-col  bg-[#0caa7d]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
+            <div id="cart_4" class="flex flex-col  bg-[#0caa7d]  py-7 mx-2 my-2 rounded-2xl items-center px-3">
                 <img class=" w-16" src="../assets/img/rocket-ship.png" alt="">
                 <span class=" mt-2 font-bold">SYNERGIE DEVOPS</span>
                 <span class=" text-center mt-2">DevOps vous rend lent et fou ? Nos experts DevOps vous soutiennent en automatisant les processus, en maximisant la vitesse, la sécurité et la collaboration, pour de meilleures performances informatiques. Fini les grincheux, votre âge d’or est arrivé !</span>
@@ -149,22 +149,12 @@ export default {
 
         setImg(img) {
             return require('../assets/img/' + img)
+        },
+        setAnimation() {
+
         }
     },
-    mounted() {
-        gsap.to('.skill-container', {
-            opacity: 1,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '#c_home',
-                start: 'top top',
-                end: 'bottom',
-                scrub: .5,
-                onComplete: () => {
-                    // timeline.play();
-                },
-            },
-        });
+    mounted() { 
 
         const numbers = document.querySelectorAll('.number');
         const svgEl = document.querySelectorAll('svg circle');

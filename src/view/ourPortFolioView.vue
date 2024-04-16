@@ -1,16 +1,16 @@
 <template>
 <div  class= " lg:h-[100vh] py-1 px-4 sm:px-[1.9rem] items-center flex flex-row">
   <div class=" w-full md:w-1/2 flex flex-col">
-    <div class=" flex flex-col mt-3">
+    <div id="text_1" class=" flex flex-col mt-3">
         <h1 class=" text-2xl py-3 font-semibold">Expertise : </h1>
         <span class=" text-justify">Notre équipe est composée de professionnels hautement qualifiés, dotés d'une expérience approfondie et d'une connaissance approfondie de notre industrie. Que ce soit dans la conception de produits, la prestation de services ou la résolution de problèmes complexes, notre expertise nous permet d'offrir des solutions de haute qualité et de répondre efficacement aux besoins de nos clients.</span>
     </div>
-    <div class=" flex flex-col mt-3">
+    <div id="text_2" class=" flex flex-col mt-3">
         <h1 class=" text-2xl py-3 font-semibold">Flexibilité : </h1>
         <span class=" text-justify"> Nous comprenons que chaque client est unique et que les besoins de chacun peuvent évoluer rapidement. C'est pourquoi nous avons adopté une approche flexible qui nous permet de nous adapter rapidement aux exigences changeantes du marché et aux demandes spécifiques de nos clients. Que ce soit en personnalisant nos produits ou services, en ajustant nos processus ou en répondant à des demandes de dernière minute, notre flexibilité nous permet de répondre de manière agile et efficace aux besoins de nos clients.</span>
     </div>
-    <div class=" flex flex-col mt-3">
-        <h1 class=" text-2xl py-3 font-semibold">L'adaptabilité : </h1>
+    <div id="text_3" class=" flex flex-col mt-3">
+        <h1 class=" text-2xl py-3 font-semibold">Adaptabilité : </h1>
         <span class=" text-justify">Etroitement liée à l'innovation au sein de notre entreprise. Nous encourageons la créativité et l'expérimentation, et nous sommes constamment à la recherche de nouvelles solutions pour répondre aux défis changeants de notre industrie. En repoussant les limites de l'innovation, nous sommes en mesure d'anticiper les besoins futurs et de nous adapter en conséquence.</span>
     </div>
 
@@ -78,12 +78,55 @@
 </template>
 
 <script>
+
+import { white } from '@tailwindcss/postcss7-compat/colors';
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger); 
 export default {
     methods: {
 
         setImg(img) {
             return require('../assets/img/' + img)
         }
+    },
+     mounted() { 
+        gsap.to('#text_1', {  
+            color:white,
+            delay:1, 
+            x:'40%', 
+            // rotateY:'90deg', 
+            scrollTrigger: {
+                trigger: '#accueil',
+                start: 'top 0%',
+                end: 'bottom 40%',
+                scrub: 0,
+            },
+        }); 
+        gsap.to('#text_2', {  
+            color:white,
+            delay:1, 
+            x:'40%', 
+            // rotateY:'90deg', 
+            scrollTrigger: {
+                trigger: '#accueil',
+                start: 'top -50%',
+                end: 'bottom 0%',
+                scrub: 0,
+            },
+        }); 
+        gsap.to('#text_3', {  
+            color:white,
+            delay:.1, 
+            x:'40%', 
+            // rotateY:'90deg', 
+            scrollTrigger: {
+                trigger: '#accueil',
+                start: 'top -120%',
+                end: 'bottom 0%',
+                scrub: 0,
+            },
+        }); 
     }
 
 }

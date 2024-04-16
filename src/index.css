@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 body {
-  overflow: hidden;
+  display: flex;
+  overflow: auto;
+  overflow-x:'hidden';
   animation-duration: 0.5s;
+  transition: .5s;
+}
+
+#h_navbar{
+  position: sticky;
+  margin-top: 2px;
+  top: 0px;
 }
 
 * {
