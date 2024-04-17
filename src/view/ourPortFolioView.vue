@@ -15,6 +15,7 @@
     </div>
 
   </div>
+  
 
     <div class=" hidden md:flex w-1/2 justify-end">
         <img class=" w-auto h-[100%]" src="../assets/img/about-img.png" alt="">
@@ -32,7 +33,7 @@
         <div class=" flex flex-col h-full mx-2 w-full">
             <div class="relative">
                 <img class=" h-[45vh] rounded-lg " :src="setImg('p-1.png')" alt="">
-                <div class="absolute top-[50%] text-white font-semibold text-3xl  text-center w-[100%]" style="filter: drop-shadow(8px 3px 8px #000);">
+                <div class="absolute top-[50%] text-white font-semibold text-3xl  textnp-center w-[100%]" style="filter: drop-shadow(8px 3px 8px #000);">
                     Logo Design
                 </div>
             </div>
