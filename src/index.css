@@ -14,7 +14,7 @@ body {
 a.router-link-exact-active {
   color: #00c93c;
   border-left:4px solid #00c93c;
-  background: #00ad1d31;
+  background: #4800ad31;
   border-radius: 0px 10px 10px 0px;
   transform: scale(1.1);
 }
@@ -44,7 +44,7 @@ a:hover{
 }
 
 ::-webkit-scrollbar-track{
-  background: #00ad1d31;
+  background: #4b00ad31;
 }  
 
 ::-webkit-scrollbar-thumb{

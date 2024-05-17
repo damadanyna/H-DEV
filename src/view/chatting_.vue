@@ -1,0 +1,24 @@
+<template>
+    <div class=" w-full h-screen flex flex-col bg-black">
+        <headerChatVue></headerChatVue>
+        <bodyChatVue></bodyChatVue>
+        <footerCahtVue ></footerCahtVue>
+    </div>
+</template>
+<script>
+import headerChatVue from '@/components/chat/headerChat.vue'  
+import bodyChatVue from '@/components/chat/bodyChat.vue' 
+import footerCahtVue from '@/components/chat/footerCaht.vue'
+export default{
+    components:{
+        headerChatVue,
+        bodyChatVue,
+        footerCahtVue
+    },
+    data(){
+        return {
+
+        }
+    }
+}
+</script>
