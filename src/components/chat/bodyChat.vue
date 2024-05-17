@@ -1,10 +1,9 @@
 <template>
-    <div v-if="listeMsg.length==0" class="  flex flex-col h-full w-full items-center justify-center">
+    <div v-if="listeMsg.length==0" class=" flex flex-col h-full w-full items-center justify-center">
         <i class="fas fa-message text-8xl text-stone-300"></i>
        <span class=" text-stone-500">Message vide</span>
     </div>
-
-    <div v-else class="max-h-[75vh]  overflow-y-auto px-1 py-3  ">
+    <div id="msgContent" v-else class="max-h-[85vh]  overflow-y-auto px-1 py-3  ">
         <div v-for="item in listeMsg" :key="item.id">
             <div v-if="item.id=='me'" class=" w-full justify-start flex" v-html="setHtml(item)"></div>    
             <div v-else class=" w-full flex justify-end">
@@ -17,56 +16,12 @@
             </div>
         </div>
     </div>
-    </template>
-    
+    </template> 
     <script>
     export default {
         data() {
             return {
-                listeMsg: [
-                    {
-                        id:'me',
-                        text:'Bonjour',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                    {
-                        id:'',
-                        text:'Bonjour ...',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                     
-                    {   id:'me',
-                        text:'sdifojsdoijfosdjfoijsdfoijsspdfjoze hjfaojoziej ohzehihzeihizheiufh osidjf sdjfaiuhs dfiuhfaiuhsidfu hsdfiuh iahdiojfdsoijfsjdfoijsdojifosidjfoijsdofijsdoijfoisjdfoijsdofjsdoijfoidsjfojsdf',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                    {
-                        id:'',
-                        text:'Inona no dikan reo ry bain fa tss zavatra asoko mints',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                     
-                    {   id:'me',
-                        text:'aaa teste io leka liak tyu ',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                    {
-                        id:'',
-                        text:'Teste inona zany reo ra ny hevtran la ',
-                        see:false,
-                        send:2,
-                        hour:'19:04'
-                    },
-                ]
+                listeMsg: []
             }
         },
         methods:{
@@ -91,7 +46,13 @@
                     </div>`
                 }
             }
-        }   
+        },
+        // mounted(){
+        //    console.log(this.$store.state.listOfMessage);
+        // },
+        beforeMount(){
+           this.listeMsg= this.$store.state.listOfMessage;
+        }
     }
     </script>
     

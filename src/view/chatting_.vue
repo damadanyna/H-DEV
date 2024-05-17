@@ -2,7 +2,7 @@
     <div class=" w-full h-screen flex flex-col bg-black">
         <headerChatVue></headerChatVue>
         <bodyChatVue></bodyChatVue>
-        <footerCahtVue ></footerCahtVue>
+        <footerCahtVue class=" absolute bottom-0" ></footerCahtVue>
     </div>
 </template>
 <script>
