@@ -1,6 +1,7 @@
 <template>
-<div class=" flex justify-between text-white w-full items-center py-1 pr-3 bg-purple-900">
-    <div class="flex items-center" @click="backTo()">
+<div class=" flex justify-between text-white w-full items-center py-2  pr-3 bg-purple-900">
+    <div></div>
+    <!-- <div class="flex items-center" @click="backTo()">
         <button class=" rounded-full text-2xl px-2 py-1">
             <i class="fas fa-angle-left"></i>
         </button>
@@ -10,9 +11,10 @@
             </button>
             <span class=" ml-2 text-sm">Dama Dany</span>
         </div>
-    </div>
+    </div> -->
     <div class="flex items-centre">
-        <button class=" mr-5 text-xl">
+        <i class="fas fa-ellipsis-vertical text-xl"></i>
+        <!-- <button class=" mr-5 text-xl">
             <i class="fas fa-video"></i>
         </button>
         <button class=" mr-5 text-xl">
@@ -20,7 +22,7 @@
         </button>
         <button class="">
             <i class=" text-xl fas fa-magnifying-glass"></i>
-        </button>
+        </button> -->
     </div>
 </div>
 </template>
