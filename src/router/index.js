@@ -7,7 +7,7 @@ import sign_in_ from '../view/auth/sign_in_.vue'
 const routes = [
   {
     path: "/",
-    name:'acueil',
+    name:'accueil',
     component: page_,
   }, 
   {
