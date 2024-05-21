@@ -5,10 +5,11 @@ import store from './store'
 import router from './router'
 import axios from 'axios'
 import '@fortawesome/fontawesome-free/css/all.css'
+import './socket'
 
 
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://localhost:8080' 
+axios.defaults.baseURL = 'http://localhost:4044' 
 
 // axios.create({
 //     baseURL:'http://localhost:8080',

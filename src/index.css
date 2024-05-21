@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: dosis;
+  /* src: url('./assets/font/Dosis/dosis.ttf') ; */
+  /* src: url('./assets/font/Urbanist/Urbanist-VariableFont_wght.ttf') ; */
+  /* src: url('./assets/font/Vollkorn/Vollkorn-VariableFont_wght.ttf') ; */
+  /* src: url('./assets/font/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') ; */
+  src: url('./assets/font/Signika/Signika-VariableFont_GRAD\,wght.ttf') ;
+}
+
 body {
   overflow: hidden;
+  font-family: dosis;
   animation-duration: 0.5s;
 }
 

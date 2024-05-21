@@ -1,5 +1,5 @@
 <template>
-    <div class=" h-full w-full flex flex-col bg-black">
+    <div class=" h-full w-full flex flex-col bg-transparent">
         <headerChatVue></headerChatVue>
         <bodyContact></bodyContact>
     </div>

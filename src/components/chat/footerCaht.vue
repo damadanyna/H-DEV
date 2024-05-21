@@ -1,5 +1,5 @@
 <template>
-<div class=" bg-black flex px-2 items-center  -mt-1 z-50">
+<div class=" bg-stone-950 flex px-2 items-center  -mt-1 z-50">
     <div class="flex items-center py-2 rounded-full px-2 text-white bg-stone-300">
         <button class="mx-2 text-purple-700">
             <i class="fas fa-face-smile"></i>

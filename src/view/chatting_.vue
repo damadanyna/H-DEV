@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-full h-screen flex flex-col bg-black">
+    <div class=" w-full h-screen flex flex-col bg-transparent">
         <headerChatVue></headerChatVue>
         <bodyChatVue></bodyChatVue>
         <footerCahtVue class=" absolute bottom-0" ></footerCahtVue>

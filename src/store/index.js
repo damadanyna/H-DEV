@@ -1,6 +1,10 @@
 import { createStore } from "vuex";
 export default createStore({
   state: {
+    listOfContact:[
+      
+    ],
+
     listOfMessage: [
       {
         id: 'me',

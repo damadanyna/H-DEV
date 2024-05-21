@@ -1,27 +1,29 @@
 <template>
-<div class=" h-screen flex w-full h-full duration-1000">
+  <div class=" bg-stone-950 flex w-full h-full duration-1000" @click="setSocket()">
     <router-view></router-view>
-</div>
+  </div>
 </template>
 
 <script>
- export default { 
-     data() {
-         return {}
-     },
+export default {
+  data() {
+    return {};
+  },
 
-     components: {},
-     mounted() { 
-        // this.$http.get('/hello').then((e)=>{
-        //     console.log(e);
-        // })
-     },
-
- }
+  components: {},
+  methods: {
+    setSocket() {
+      this.$http.get("/api/check");
+    },
+  },
+  mounted() {
+    // this.$http.get('/hello').then((e)=>{
+    //     console.log(e);
+    // })
+  },
+};
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-}
+ 
 </style>
