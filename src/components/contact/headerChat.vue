@@ -3,17 +3,19 @@
     <div>
     </div>
     <div class="flex items-centre ">
-        <button class=" bg-stone-800 px-2  mr-3 items-center flex rounded-full py-[.57rem]">
-            <i class="fas fas fa-user-group "></i>
-        </button>
-        <button class=" bg-stone-800 px-[.57rem] mr-3 items-center flex rounded-full py-[.35rem]">
-            <i class="fas fa-message "></i>
-        </button>
+        <!-- fas fa-house-chimney -->
+        <router-link :to="item.url" v-for="item, i in menuList" :key="i" class="   bg-stone-800 mr-3 px-2 items-center flex rounded-full py-[.57rem]">
+            <i :class="item.ico "></i>
+        </router-link>
+        
 
+        <button @click="logOut()" class=" bg-stone-800 px-2  mr-3 items-center flex rounded-full py-[.57rem]">
+            <i class="fas fa-bell"></i>
+        </button>
         <button @click="logOut()" class=" bg-stone-800 px-2  mr-3 items-center flex rounded-full py-[.57rem]">
             <i class="fas fa-power-off "></i>
         </button>
-                <i class="fas fa-ellipsis-vertical text-xl"></i>
+        <i class="fas fa-ellipsis-vertical text-xl"></i>
     </div>
 </div>
 </template>
@@ -21,7 +23,22 @@
 <script>
 export default {
     data() {
-        return {}
+        return {
+            menuList:[
+                { 
+                    ico:'fas fa-house-chimney ',
+                    url:'/'
+                },
+                { 
+                    ico:'fas fa-user-group ',
+                    url:'/contact'
+                },
+                { 
+                    ico:'fas fa-message',
+                    url:'/login'
+                }
+            ]
+        }
     },
     methods: {
         backTo() {
@@ -33,7 +50,10 @@ export default {
             this.$http.get("/api/logout").then(() => {
                 window.location.reload()
             })
-        } 
+        }
+    },
+    mounted(){
+        console.log(this.$store.state.user);
     }
 }
 </script>

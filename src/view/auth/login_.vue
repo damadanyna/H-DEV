@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="mt-10 flex flex-col">
-                <span id="note" class=" text-pink-500" v-text="'Renplissez les champs'"></span>
+                <span id="note" class=" text-green-500" v-text="'Renplissez les champs'"></span>
                 <button @click="seConnecter()" :class="data.user =='' || data.pwd=='' ?' bg-stone-500':'bg-pink-700'" class="  py-2 rounded-full">
                     Se connecter
                 </button>
@@ -57,26 +57,38 @@ export default {
                 ico_.classList.remove('text-pink-500')
             }
         },
-        seConnecter() {
+        async seConnecter() {
+            var note = document.getElementById('note')
             if (this.data.user !== '' && this.data.pwd !== '') {
-                this.$http.post("/api/login", {
+                const rep = await this.$http.post("/api/login", {
                     user_name: this.data.user,
                     user_pass: this.data.pwd,
-                }).then((e) => {
-                    // this.$router.replace({
-                    //     name: 'acueil'
-                    // })
-                console.log(e)
-                    // window.location.reload()
-                }).catch(() => {
-                    var note = document.getElementById('note')
-                    note.innerText = 'Compte introvable';
-                    note.classList.add('text-pink-500')
-                });
+                })
+                if (rep.data.token) {
+                     
+                    note.classList.add('text-green-500')
+                    note.classList.remove('text-red-500')
+                    note.innerText = 'Chargement ...';
+                    window.localStorage.setItem('token',rep.data.token)
+                    window.location.reload();
+                } else {
+                    note.classList.remove('text-green-500')
+                    note.classList.add('text-red-500')
+                    note.innerText = rep.data.message;
+                }
+                // .then(() => {
+                //     // this.$router.replace({
+                //     //     name: 'acueil'
+                //     // }) 
+                //     window.location.reload()
+                // }).catch(() => {
+                //     var note = document.getElementById('note')
+                //     note.innerText = 'Compte introvable';
+                //     note.classList.add('text-pink-500')
+                // });
             } else {
-                var note = document.getElementById('note')
                 note.innerText = 'Certaine champs sont vide';
-                note.classList.add('text-pink-500')
+                note.classList.add('text-red-500')
             }
         },
         sinscrire() {

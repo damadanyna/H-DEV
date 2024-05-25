@@ -1,9 +1,9 @@
 import { createStore } from "vuex";
 export default createStore({
   state: {
-    listOfContact:[
-      
+    listOfContact:[ 
     ],
+    user:{user_id:null},
 
     listOfMessage: [
       {
