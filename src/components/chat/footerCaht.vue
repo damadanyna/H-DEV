@@ -38,8 +38,7 @@ export default {
 
             var container = document.getElementById('msgContent');
             setTimeout(() => {
-                container.scrollTop = container.scrollHeight
-                console.log(container.scrollHeight);
+                container.scrollTop = container.scrollHeight 
                 this.valueOf = ''
             }, 300);
         }

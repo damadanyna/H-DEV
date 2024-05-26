@@ -4,6 +4,7 @@ export default createStore({
     listOfContact:[ 
     ],
     user:{user_id:null},
+    notification:[],
 
     listOfMessage: [
       {

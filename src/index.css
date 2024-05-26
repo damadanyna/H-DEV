@@ -24,6 +24,9 @@ body {
 a.router-link-exact-active {
   color: #fe169a;   
 }
+a.router-link-exact-active >div{
+  color: #ffffff;   
+}
 .bg-green-trsp{
   background: #00ad1d31;
 }

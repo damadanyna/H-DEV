@@ -8,7 +8,7 @@
             <div class="">
                 <span class=" ml-2" v-text="item.user_name"></span>
             </div>
-            <div class=" justify-end flex flex-col">
+            <div  class=" justify-end flex flex-col" v-if="item.demand_statut!='done'">
                 <div></div>
                 <button v-if="item.exist==0" @click="addFriend(item)" class=" mt-6 text-xs px-6 text-white uppercase  bg-pink-950 py-1 rounded-full">
                     <i class="fas fa-user-plus text-sm"></i>
@@ -31,45 +31,48 @@ var socket = io('http://localhost:4044')
 export default {
     data() {
         return {
-            listOfCont: [],
-            user_id: this.$store.state.user.user_id
+            listOfCont: [], 
         }
     },
     methods: {
-        addFriend(item) {
-            var admin_ = this.user_id;
+       async addFriend(item) {  
             var data_dmd = {
-                user_id: admin_,
+                user_id: this.$store.state.user.user_id,
                 demand_user_id: item.user_id,
                 demand_statut: 'wait',
             };
             var data_not = {
-                user_id: item.user_id,
-                notif_type: 'add',
-                notif_content: 'friend',
-                notif_vu: 'false',
+                user_id: item.user_id, 
+                notif_user_id:this.$store.state.user.user_id,
+                notif_rem: 'false',
+                notif_type: 'friend',
+                notif_lu: 'false',
+                notif_vu: 'false',   
             };
 
-            this.$http.post("/api/add_friend", data_dmd).then(() => {
-                // console.log('dmd: ', rep.data);
+           await this.$http.post("/api/add_friend", data_dmd).then(() => {
+                console.log('dmd' );
 
                 // liste_to_
             });
 
-            this.$http.post("/api/add_notification", data_not).then((rep) => {
-                console.log('Notify:  ', rep.data);
+           await this.$http.post("/api/add_notification", data_not).then(() => {
+                console.log('Notify');
             });
+            
+           await this.$http.get("/api/get_perso/"+item.user_id)
 
-            socket.on('demande_to_' + admin_, () => {
-                item.exist = 1;
+            item.exist = 1;
+
+            socket.on('demande_to_' + this.$store.state.user.user_id, () => {
+               
                 // console.log('Demande: ', data,i)
 
-            })
+            }) 
 
         },
         async checkIfLooged() {
             const token = localStorage.getItem('token');
-            console.log(token);
             if (token) {
                 try {
                     const resp = await this.$http.get('/api/check', {
@@ -77,30 +80,31 @@ export default {
                             'Authorization': `Bearer ${token}`
                         }
                     })
-                    this.$store.state.user = resp.data
-                    console.log('connecter', resp.data);
+                    this.$store.state.user = resp.data.user
+                    // console.log('connecter', resp.data.user);
                     return true;
                 } catch (error) {
-                    console.log('erreur', error);
+                    this.$router.replace({
+                        name: 'login'
+                    })
                     return false;
                 }
             }
+        },
+        async getList() { 
+            const rep = await this.$http.post("/api/get_all_user", this.$store.state.user);
+            this.listOfCont = rep.data.contact;
         }
-
     },
-    mounted() {
+    beforeMount() {
 
-        const init = this.checkIfLooged()
-        if (init) {
-            this.$http.post("/api/get_all_user", this.$store.state.user).then((rep) => {
-                this.listOfCont = rep.data.data
-            });
-        } else {
-            this.$router.replace({
-                name: 'login'
-            })
-        }
+        setTimeout(() => {
+            this.getList()
+        }, 500);
+    },
+    updated() {
+        // this.getList() 
+    },
 
-    }
 }
 </script>

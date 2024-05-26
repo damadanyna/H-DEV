@@ -1,16 +1,13 @@
 <template>
-    <div class=" h-full w-full flex flex-col bg-transparent">
-        <headerChatVue></headerChatVue>
+    <div class=" h-full w-full flex flex-col bg-transparent"> 
         <bodyContact></bodyContact>
     </div>
 </template>
 
-<script>
-import headerChatVue from '@/components/contact/headerChat.vue';
-import bodyContact from '@/components/contact/bodyContactFriend.vue';
+<script> 
+import bodyContact from '@/components/contact/bodyContact.vue';
 export default{
-    components:{
-        headerChatVue,
+    components:{ 
         bodyContact
     },
     data(){

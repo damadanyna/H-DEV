@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"; 
-import page_ from '../view/page_.vue';
+// import page_ from '../view/page_.vue';
 import chatting_ from '../view/chatting_.vue';
 import contact_ from '../view/contact_.vue';
+import notification from '../view/notification _.vue'
 import login_ from '../view/auth/login_.vue';
 import sign_in_ from '../view/auth/sign_in_.vue';
 
@@ -9,7 +10,7 @@ const routes = [
   {
     path: "/",
     name:'accueil',
-    component: page_,
+    component: contact_,
   }, 
   {
     path: "/chat",
@@ -18,17 +19,17 @@ const routes = [
     
   }, 
   {
+    path: "/notification",
+    name:'notify',
+    component: notification,
+    
+  }, 
+  {
     path: "/login",
     name:'login',
     component: login_,
     
-  }, 
-  {
-    path: "/contact",
-    name:'contact',
-    component: contact_,
-    
-  }, 
+  },  
   {
     path: "/inscription",
     name:'sign_in_',

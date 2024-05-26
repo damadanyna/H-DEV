@@ -46,10 +46,7 @@
                     </div>`
                 }
             }
-        },
-        // mounted(){
-        //    console.log(this.$store.state.listOfMessage);
-        // },
+        }, 
         beforeMount(){
            this.listeMsg= this.$store.state.listOfMessage;
         }

@@ -1,30 +1,36 @@
 <template>
-<div class=" bg-stone-950 flex   w-full h-full duration-1000">
-    <router-view></router-view>
+<div class=" bg-stone-950 flex flex-col  w-full h-full duration-1000">
+    <headerChat></headerChat>
+    <router-view></router-view> 
 </div>
 </template>
 
-<script>
+<script>  
+import headerChat from './components/contact/headerChat.vue';
 export default {
+    components :{ 
+        headerChat
+    },
     data() {
         return {};
     },
-
-    components: {},
+ 
     methods: {
         // setSocket() {
         //   this.$http.get('/api/check')
         // },
         async checkIfLooged() {
             const token = localStorage.getItem('token');
-            console.log(token);
             if (token) {
                 try {
-                      await this.$http.get('/api/check', {
-                        headers: {'Authorization':`Bearer ${token}`}
+                    const rep = await this.$http.get('/api/check', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
                     }) 
+                    this.$store.state.user = rep.data.user
                     return true;
-                } catch (error) { 
+                } catch (error) {
                     return false;
                 }
             }
@@ -34,7 +40,6 @@ export default {
         const init = async () => {
             const isLoggedIn = await this.checkIfLooged();
             if (isLoggedIn) {
-                // this.$store.state.user=rep.data.data
                 this.$router.replace({
                     name: 'accueil'
                 })
@@ -44,12 +49,13 @@ export default {
                 })
             }
         }
-        init();
- 
-        
-        this.$http.get('/api/get_notification/' + this.$store.state.user.user_id).then((rep) => {
-            console.log('REP: ', rep.data);
-        })
+        setTimeout(() => {
+            init(); 
+        }, 200);
+
+
+     
+
     },
 };
 </script>
